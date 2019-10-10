@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16b43cf1-27f1-4f70-acd1-fc2b5f817936" name="Default Changelist" comment="" />
+    <list default="true" id="6ff0958e-25ef-4351-96c1-b35e0c62f16f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,11 +18,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1RxkO1gkgG2jy5k3cvYeZ35BNz2" />
+  <component name="ProjectId" id="1S0Z6VZdBJ215spBrobGj9YEpVo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
-  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -35,30 +32,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Cine" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="16b43cf1-27f1-4f70-acd1-fc2b5f817936" name="Default Changelist" comment="" />
-      <created>1570616098878</created>
+      <changelist id="6ff0958e-25ef-4351-96c1-b35e0c62f16f" name="Default Changelist" comment="" />
+      <created>1570702298928</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570616098878</updated>
+      <updated>1570702298928</updated>
     </task>
     <servers />
   </component>
@@ -67,9 +50,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
