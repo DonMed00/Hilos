@@ -4,10 +4,10 @@ public class Main {
         final int JORNADA = 60000;
         Basket dollBasket = new Basket();
         Basket dressedBasket = new Basket();
-        Thread thread1 = new Thread(new DollMaker("Trabajador 1", dollBasket));
-        Thread thread2 = new Thread(new DollMaker("Trabajador 2", dollBasket));
-        Thread thread3 = new Thread(new Tailor("Trabajador 3", dollBasket, dressedBasket));
-        Thread thread4 = new Thread(new Packer("Trabajador 4", dressedBasket));
+        Thread thread1 = new Thread(new DollMaker("Trabajador 1", "DollMaker", dollBasket, dressedBasket));
+        Thread thread2 = new Thread(new DollMaker("Trabajador 2", "DollMaker", dollBasket, dressedBasket));
+        Thread thread3 = new Thread(new Tailor("Trabajador 3", "Tailor", dollBasket, dressedBasket));
+        Thread thread4 = new Thread(new Packer("Trabajador 4", "Packer", dollBasket, dressedBasket));
 
         thread1.start();
         thread2.start();
@@ -22,8 +22,8 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Señor@s a la casa, mañana será otro día");
-        System.out.printf("Hemos producido un Total de %d Baldomeras", Packer.totalProd);
+        System.out.println("Jefe: Señor@s a la casa, mañana será otro día");
+        System.out.printf("Hemos producido un Total de %d Baldomeras\n Buen trabajo!!", Packer.totalProd);
 
     }
 }

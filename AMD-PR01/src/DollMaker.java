@@ -2,14 +2,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
-public class DollMaker implements Runnable {
-    private String name;
-    private Basket dollbasket;
+public class DollMaker extends Worker {
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    public DollMaker(String name, Basket dollbasket) {
-        this.name = name;
-        this.dollbasket = dollbasket;
+    public DollMaker(String name, String type, Basket dollBasket, Basket dressedBasket) {
+        super(name, type, dollBasket, dressedBasket);
     }
 
     @Override
@@ -25,18 +22,20 @@ public class DollMaker implements Runnable {
         }
     }
 
+    /**
+     * @param doll
+     * Use poner() of dollBasket, while displaying a message.
+     * @throws InterruptedException
+     */
     private void poner(Doll doll) throws InterruptedException {
         int min = 4000;
         int max = 8000;
         Random random = new Random();
         int myRandomNumber = random.nextInt(max - min) + min;
-        dollbasket.poner(doll);
-        System.out.printf("%s - %s de tipo DollMaker ha colocado la muñeca %d en la primera cesta\n", LocalDateTime.now().format(dateTimeFormatter), getName(), doll.getnSerie());
+        getDollBasket().poner(doll);
+        System.out.printf("%s - %s de tipo %s ha colocado la muñeca %d en la primera cesta\n", LocalDateTime.now().format(dateTimeFormatter), getName(), getType(), doll.getnSerie());
 
         Thread.currentThread().sleep(myRandomNumber);
     }
 
-    public String getName() {
-        return name;
-    }
 }
