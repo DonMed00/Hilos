@@ -9,9 +9,7 @@ public class Basket {
      */
     public synchronized void poner(Doll doll, String message) {
         lista.add(doll);
-        if (!message.isEmpty()) {
-            System.out.printf(message);
-        }
+        System.out.printf(message);
         notify();
 
     }
@@ -33,9 +31,5 @@ public class Basket {
         lista.remove(0);
         return doll;
 
-    }
-
-    public ArrayList<Doll> getLista() {
-        return lista;
     }
 }

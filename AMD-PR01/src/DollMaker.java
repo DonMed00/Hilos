@@ -11,9 +11,8 @@ public class DollMaker extends Worker {
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
-            Doll doll = new Doll();
             try {
-                poner(doll);
+                poner();
             } catch (InterruptedException e) {
                 return;
             }
@@ -21,10 +20,11 @@ public class DollMaker extends Worker {
     }
 
     /**
-     * @param doll Use poner() of dollBasket and sleep a rondon time.
+     * Use poner() of dollBasket and sleep.
      * @throws InterruptedException
      */
-    private void poner(Doll doll) throws InterruptedException {
+    private void poner() throws InterruptedException {
+        Doll doll = new Doll();
         String message = String.format("%s - %s de tipo %s ha colocado la muñeca %d en la primera cesta\n", LocalDateTime.now().format(dateTimeFormatter), getName(), getType(), doll.getnSerie());
         getDollBasket().poner(doll, message);
         Thread.currentThread().sleep(generateRandon(4000, 8000));
