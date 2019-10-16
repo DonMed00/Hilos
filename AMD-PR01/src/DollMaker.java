@@ -1,6 +1,5 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Random;
 
 public class DollMaker extends Worker {
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
@@ -12,9 +11,8 @@ public class DollMaker extends Worker {
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
-
+            Doll doll = new Doll();
             try {
-                Doll doll = new Doll();
                 poner(doll);
             } catch (InterruptedException e) {
                 return;
@@ -23,19 +21,13 @@ public class DollMaker extends Worker {
     }
 
     /**
-     * @param doll
-     * Use poner() of dollBasket, while displaying a message.
+     * @param doll Use poner() of dollBasket and sleep a rondon time.
      * @throws InterruptedException
      */
     private void poner(Doll doll) throws InterruptedException {
-        int min = 4000;
-        int max = 8000;
-        Random random = new Random();
-        int myRandomNumber = random.nextInt(max - min) + min;
-        getDollBasket().poner(doll);
-        System.out.printf("%s - %s de tipo %s ha colocado la muñeca %d en la primera cesta\n", LocalDateTime.now().format(dateTimeFormatter), getName(), getType(), doll.getnSerie());
-
-        Thread.currentThread().sleep(myRandomNumber);
+        String message = String.format("%s - %s de tipo %s ha colocado la muñeca %d en la primera cesta\n", LocalDateTime.now().format(dateTimeFormatter), getName(), getType(), doll.getnSerie());
+        getDollBasket().poner(doll, message);
+        Thread.currentThread().sleep(generateRandon(4000, 8000));
     }
 
 }

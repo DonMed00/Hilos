@@ -1,13 +1,17 @@
 public class Doll {
-    private static int numSerie=0;
-    private int nSerie=0;
+    private static int numSerie;
+    private int nSerie;
 
     public Doll() {
-        numSerie++;
-        this.nSerie =numSerie;
+        aumentarSerie();
     }
 
     public int getnSerie() {
         return nSerie;
+    }
+
+    private void aumentarSerie(){
+        numSerie++;
+        this.nSerie =numSerie;
     }
 }

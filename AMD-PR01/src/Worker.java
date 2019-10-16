@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Worker implements Runnable {
     private String name;
     private String type;
@@ -14,6 +16,11 @@ public class Worker implements Runnable {
     @Override
     public void run() {
 
+    }
+
+    public int generateRandon(int min, int max) {
+        Random random = new Random();
+        return random.nextInt(max - min) + min;
     }
 
     public Basket getDollBasket() {

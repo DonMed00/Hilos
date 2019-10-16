@@ -1,6 +1,5 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Random;
 
 public class Tailor extends Worker {
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
@@ -12,9 +11,10 @@ public class Tailor extends Worker {
 
     @Override
     public void run() {
-        while(!Thread.currentThread().isInterrupted()){
+        while (!Thread.currentThread().isInterrupted()) {
             try {
-                cogerPoner();
+                poner(coger());
+                Thread.currentThread().sleep(1000, 3000);
             } catch (InterruptedException e) {
                 return;
             }
@@ -22,20 +22,24 @@ public class Tailor extends Worker {
 
     }
 
+
     /**
-     * Use coger() of dollBasket and then add that Doll to dressedBasket, while displaying a message
+     * @return getDollBasket().coger()
      * @throws InterruptedException
      */
-    private void cogerPoner() throws InterruptedException {
-        int min = 1000;
-        int max = 3000;
-        Random random = new Random();
-        int myRandomNumber = random.nextInt(max - min) + min;
-        Doll doll;
-        doll = getDollBasket().coger();
-        getDressedBasket().poner(doll);
-        System.out.printf("%s - %s de tipo %s ha colocado la muñeca %d vestida en la segunda cesta\n", LocalDateTime.now().format(dateTimeFormatter), getName(),getType(), doll.getnSerie());
-        Thread.currentThread().sleep(myRandomNumber);
+    private Doll coger() throws InterruptedException {
+        return getDollBasket().coger();
+
+
+    }
+
+    /**
+     * @param doll
+     * Use poner() of dressedBasket
+     */
+    private void poner(Doll doll){
+        String message = String.format("%s - %s de tipo %s ha colocado la muñeca %d vestida en la segunda cesta\n", LocalDateTime.now().format(dateTimeFormatter), getName(), getType(), doll.getnSerie());
+        getDressedBasket().poner(doll, message);
 
     }
 }
