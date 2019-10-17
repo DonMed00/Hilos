@@ -1,8 +1,5 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Tailor extends Worker {
-    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     public Tailor(String name, String type, Basket dollBasket, Basket dressedBasket) {
         super(name, type, dollBasket, dressedBasket);
@@ -38,8 +35,7 @@ public class Tailor extends Worker {
      * Use poner() of dressedBasket
      */
     private void poner(Doll doll){
-        String message = String.format("%s - %s de tipo %s ha colocado la muñeca %d vestida en la segunda cesta\n", LocalDateTime.now().format(dateTimeFormatter), getName(), getType(), doll.getnSerie());
-        getDressedBasket().poner(doll, message);
+        getDressedBasket().poner(doll,getName(),getType(),"segunda");
 
     }
 }
