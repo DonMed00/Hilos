@@ -14,7 +14,7 @@ public class Basket {
         String message = String.format("%s - %s de tipo %s ha colocado la muñeca %d en la %s cesta\n", LocalDateTime.now().format(dateTimeFormatter), name, type, doll.getnSerie(),cesta);
         lista.add(doll);
         System.out.printf(message);
-        notify();
+        notifyAll();
 
     }
 
