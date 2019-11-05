@@ -18,15 +18,15 @@ public class Filosofo implements Runnable{
 
     @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
+        //while (!Thread.currentThread().isInterrupted()) {
             try {
                 cogerPalillo1();
-                cogerPalillo2();
-                comer();
+                //cogerPalillo2();
+               // comer();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
+       // }
     }
 
     void cogerPalillo1() throws InterruptedException {
@@ -40,7 +40,7 @@ public class Filosofo implements Runnable{
         Thread.sleep(2000);
     }
 
-    void cogerPalillo2() throws InterruptedException {
+    /*void cogerPalillo2() throws InterruptedException {
 
         Palillo palillo = mesa.cogerPalillo2(numFilosofo);
         if(palillo.getNumPalillo()!=6){
@@ -49,7 +49,7 @@ public class Filosofo implements Runnable{
         }
 
         Thread.sleep(2000);
-    }
+    }*/
 
     void comer() throws InterruptedException {
         if(palillos.size()==2){
@@ -63,6 +63,8 @@ public class Filosofo implements Runnable{
     private void soltarPalillos() throws InterruptedException {
         mesa.soltarPalillos(palillos);
         System.out.printf("%s . Suelto los palillos %d y %d\n",name,palillos.get(0).getNumPalillo(),palillos.get(1).getNumPalillo());
+        palillos.remove(0);
+        palillos.remove(1);
         Thread.sleep(2000);
     }
 
