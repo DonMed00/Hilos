@@ -33,10 +33,12 @@ public class Palillo {
     void soltar(String name,Boolean flag) throws InterruptedException {
         lock.lock();
 
-        System.out.printf("%s - %s . Suelto el palillo %d\n",LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
         //Thread.sleep(2000);
         if(flag){
-            System.out.printf("%s - %s .Ya he comido\n", LocalDateTime.now().format(dateTimeFormatter),name);
+            System.out.printf("%s - %s .Suelto el palillo %d Ya he comido\n", LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
+
+        }else{
+            System.out.printf("%s - %s . Suelto el palillo %d\n",LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
 
         }
         pillado =false;

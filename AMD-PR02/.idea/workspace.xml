@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a89987f-a3e0-4aa6-b8a2-e9542ab2274d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Filosofo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Filosofo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Mesa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Palillo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Palillo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Filosofo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Mesa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Palillo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution1/Palillo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution1/Palillo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
