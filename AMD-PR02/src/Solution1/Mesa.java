@@ -9,7 +9,7 @@ public class Mesa {
     private int comensales;
     ArrayList<Palillo> palillos;
     Lock lock = new ReentrantLock(true);
-    //Condition hayPalillo = lock.newCondition();
+    Condition hayPalillo = lock.newCondition();
     static int contador = 0;
 
 
@@ -26,10 +26,12 @@ public class Mesa {
         lock.lock();
         Palillo palillo = new Palillo(6);
         contador++;
-
+        if (palillos.size() < 1) {
+            hayPalillo.await();
+        }
         for (int i = 0; i < palillos.size(); i++) {
             if (contador>4) {
-                if (palillos.get(i).getNumPalillo() == num) {
+                if (palillos.get(i).getNumPalillo() >= num) {
                     palillo = palillos.get(i);
                     palillos.remove(i);
                 }
@@ -49,7 +51,7 @@ public class Mesa {
     }
 
 
-    /*Palillo cogerPalillo2(int num) throws InterruptedException {
+    Palillo cogerPalillo2(int num) throws InterruptedException {
         lock.lock();
         Palillo palillo = new Palillo(6);
         if (palillos.size() < 1) {
@@ -66,13 +68,13 @@ public class Mesa {
 
 
         return palillo;
-    }*/
+    }
 
     void soltarPalillos(ArrayList<Palillo> palillos) {
         lock.lock();
         palillos.add(palillos.get(0));
         palillos.add(palillos.get(1));
-        //hayPalillo.signal();
+        hayPalillo.signal();
         lock.unlock();
     }
 
