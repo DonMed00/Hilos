@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="5a89987f-a3e0-4aa6-b8a2-e9542ab2274d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Filosofo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution1/Filosofo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution1/Mesa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Filosofo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Filosofo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Mesa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Palillo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution1/Palillo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution1/Filosofo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution1/Mesa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution1/Palillo.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,10 +40,11 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Solution2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Solution1" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Adrian\Desktop\Hilos\AMD-PR02\src\Solution1" />
       <recent name="C:\Users\Adrian\Desktop\Hilos\AMD-PR02\src\Solution2" />
     </key>
   </component>

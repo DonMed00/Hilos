@@ -1,7 +1,5 @@
-package Solution1;
+package Solution2;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -10,7 +8,6 @@ public class Palillo {
     private boolean pillado;
     ReentrantLock lock = new ReentrantLock(true);
     private final Condition condition = lock.newCondition();
-    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
 
     public Palillo(int numPalillo) {
@@ -26,24 +23,16 @@ public class Palillo {
         }
         pillado =true;
         lock.unlock();
-        System.out.printf("%s - %s .Tengo el palillo %d\n", LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
+        System.out.printf("%s .Tengo el palillo %d\n",name,numPalillo);
 
     }
 
-    void soltar(String name,Boolean flag) throws InterruptedException {
+    void soltar(String name){
         lock.lock();
-
-        System.out.printf("%s - %s . Suelto el palillo %d\n",LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
-        //Thread.sleep(2000);
-        if(flag){
-            System.out.printf("%s - %s .Ya he comido\n", LocalDateTime.now().format(dateTimeFormatter),name);
-
-        }
         pillado =false;
         condition.signal();
-
         lock.unlock();
-
+        System.out.printf("%s .Ya he comido. Suelto el palillo %d\n",name,numPalillo);
 
     }
 

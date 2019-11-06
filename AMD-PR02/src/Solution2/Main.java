@@ -1,4 +1,4 @@
-package Solution1;
+package Solution2;
 
 public class Main {
     public static void main(String[] args) {
