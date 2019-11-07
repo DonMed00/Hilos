@@ -5,11 +5,9 @@ import java.time.format.DateTimeFormatter;
 
 public class Filosofo implements Runnable {
     private String name;
-    private int numFilosofo;
-    static int filosofo;
-    Palillo palillo1;
-    Palillo palillo2;
-    boolean interrumpted =false;
+    private Palillo palillo1;
+    private Palillo palillo2;
+    private boolean interrumpted =false;
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
 
@@ -17,7 +15,6 @@ public class Filosofo implements Runnable {
         this.name = name;
         this.palillo1 = palillo1;
         this.palillo2 = palillo2;
-        aumentarNumFilosofo();
     }
 
     @Override
@@ -61,9 +58,5 @@ public class Filosofo implements Runnable {
         palillo2.soltar(name, true);
         Thread.sleep(2000);
 
-    }
-    private void aumentarNumFilosofo() {
-        filosofo++;
-        this.numFilosofo = filosofo;
     }
 }

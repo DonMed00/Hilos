@@ -1,67 +1,40 @@
 package Solution2;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Filosofo implements Runnable {
     private String name;
-    private int numFilosofo;
-    static int filosofo;
-    Palillo palillo1;
-    Palillo palillo2;
+    private Palillo palillo1;
+    private Palillo palillo2;
+    private boolean interrumpted =false;
+    Camarero camarero;
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    public Filosofo(String name, Palillo palillo1, Palillo palillo2) {
+
+    public Filosofo(String name, Palillo palillo1, Palillo palillo2,Camarero camarero) {
         this.name = name;
         this.palillo1 = palillo1;
         this.palillo2 = palillo2;
-        aumentarNumFilosofo();
+        this.camarero=camarero;
     }
 
     @Override
     public void run() {
-        //while (!Thread.currentThread().isInterrupted()) {
+        while (!Thread.currentThread().isInterrupted() && !interrumpted) {
             try {
-                comer();
+                pensar();
+                camarero.comprobarPalillos(palillo1,palillo2,name);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                interrumpted = true;
+                System.out.printf("%s . Me he interrumpido\n",name);
+
             }
         }
-   // }
-
-    private void comer() throws InterruptedException {
-        cogerTenedor();
-        soltarTenedor();
     }
 
-
-    void cogerTenedor() throws InterruptedException {
-        if(!palillo1.isPillado() && !palillo2.isPillado()){
-            Thread.sleep(2000);
-            palillo1.coger(name);
-            palillo2.coger(name);
-            Thread.sleep(2000);
-        }
+    private void pensar() throws InterruptedException {
+        System.out.printf("%s - %s . Estoy pensando\n",LocalDateTime.now().format(dateTimeFormatter),name);
+        Thread.sleep(5000);
     }
-    void soltarTenedor() throws InterruptedException {
-        Thread.sleep(2000);
-        palillo1.soltar(name);
-        palillo2.soltar(name);
-        //System.out.printf("%s .Ya he comido\n Suelto los palillos %d y %d\n",name,palillo1.getNumPalillo(),palillo2.getNumPalillo());
-        Thread.sleep(2000);
-
-    }
-
-
-
-    private void aumentarNumFilosofo() {
-        filosofo++;
-        this.numFilosofo = filosofo;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getNumFilosofo() {
-        return numFilosofo;
-    }
-
-
 }

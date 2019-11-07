@@ -1,5 +1,7 @@
 package Solution2;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -8,13 +10,13 @@ public class Palillo {
     private boolean pillado;
     ReentrantLock lock = new ReentrantLock(true);
     private final Condition condition = lock.newCondition();
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
 
     public Palillo(int numPalillo) {
         this.numPalillo=numPalillo;
         this.pillado =false;
     }
-
 
     void coger(String name) throws InterruptedException {
         lock.lock();
@@ -23,29 +25,25 @@ public class Palillo {
         }
         pillado =true;
         lock.unlock();
-        System.out.printf("%s .Tengo el palillo %d\n",name,numPalillo);
+        System.out.printf("%s - %s .Tengo el palillo %d\n", LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
 
     }
 
-    void soltar(String name){
+    void soltar(String name,Boolean flag) throws InterruptedException {
         lock.lock();
+        if(flag){
+            System.out.printf("%s - %s . Suelto el palillo %d Ya he comido . Me voy a pensar \n", LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
+        }else{
+            System.out.printf("%s - %s . Estoy comiendo. Que rico!! \n",LocalDateTime.now().format(dateTimeFormatter),name);
+            Thread.sleep(1500);
+            System.out.printf("%s - %s . Suelto el palillo %d\n",LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
+        }
         pillado =false;
         condition.signal();
+
         lock.unlock();
-        System.out.printf("%s .Ya he comido. Suelto el palillo %d\n",name,numPalillo);
-
-    }
 
 
-
-
-
-
-
-
-
-    public int getNumPalillo() {
-        return numPalillo;
     }
 
     public boolean isPillado() {
