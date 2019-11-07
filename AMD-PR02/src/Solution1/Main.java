@@ -2,16 +2,16 @@ package Solution1;
 
 class Main {
     public static void main(String[] args) {
-        Palillo palillo1 = new Palillo(0);
-        Palillo palillo2 = new Palillo(1);
-        Palillo palillo3 = new Palillo(2);
-        Palillo palillo4 = new Palillo(3);
-        Palillo palillo5 = new Palillo(4);
-        Thread thread1 = new Thread(new Filosofo("Platon", palillo1, palillo2));
-        Thread thread2 = new Thread(new Filosofo("Socrates", palillo2, palillo3));
-        Thread thread3 = new Thread(new Filosofo("Descartes", palillo3, palillo4));
-        Thread thread4 = new Thread(new Filosofo("Agustin", palillo4, palillo5));
-        Thread thread5 = new Thread(new Filosofo("Tomás", palillo1, palillo5));
+        Stick stick1 = new Stick(0);
+        Stick stick2 = new Stick(1);
+        Stick stick3 = new Stick(2);
+        Stick stick4 = new Stick(3);
+        Stick stick5 = new Stick(4);
+        Thread thread1 = new Thread(new Philosopher("Platon", stick1, stick2));
+        Thread thread2 = new Thread(new Philosopher("Socrates", stick2, stick3));
+        Thread thread3 = new Thread(new Philosopher("Descartes", stick3, stick4));
+        Thread thread4 = new Thread(new Philosopher("Agustin", stick4, stick5));
+        Thread thread5 = new Thread(new Philosopher("Tomás", stick1, stick5));
 
         thread1.start();
         thread2.start();
@@ -37,6 +37,6 @@ class Main {
             e.printStackTrace();
         }
 
-        System.out.println("Dueño del bar: Dejar de comer y pensar ya, que es tarde");
+        System.out.println("Restaurant owner: Stop eating and thinking now. It's late!!");
     }
 }

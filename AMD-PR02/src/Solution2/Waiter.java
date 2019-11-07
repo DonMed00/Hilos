@@ -2,17 +2,17 @@ package Solution2;
 
 import java.util.concurrent.Semaphore;
 
-class Camarero {
+class Waiter {
     private final Semaphore semaphore = new Semaphore(1);
 
-    void comprobarPalillos(Palillo palillo1, Palillo palillo2, String name) throws InterruptedException {
+    void checkSticks(Stick stick1, Stick stick2, String name) throws InterruptedException {
         semaphore.acquire();
        // if (!palillo1.isPillado() && !palillo2.isPillado()) {
-            palillo1.coger(name);
-            palillo2.coger(name);
+            stick1.take(name);
+            stick2.take(name);
 
-            palillo1.soltar(name,false);
-            palillo2.soltar(name,true);
+            stick1.drop(name,false);
+            stick2.drop(name,true);
        // }
         semaphore.release();
 
