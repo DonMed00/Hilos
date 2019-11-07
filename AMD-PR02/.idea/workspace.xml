@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a89987f-a3e0-4aa6-b8a2-e9542ab2274d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Palillo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution1/Palillo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution2/Stick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution2/Stick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution2/Waiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution2/Waiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution1/Philosopher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution1/Philosopher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution1/Stick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution1/Stick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution2/Philosopher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution2/Philosopher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution2/Stick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution2/Stick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution2/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution2/Waiter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +41,7 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Solution3" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
@@ -40,6 +49,7 @@
       <recent name="Stick" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Adrian\Desktop\Hilos\AMD-PR02\src\Solution3" />
       <recent name="C:\Users\PC\Desktop\Hilos\AMD-PR02\src\Solution2" />
       <recent name="C:\Users\Adrian\Desktop\Hilos\AMD-PR02\src\Solution1" />
       <recent name="C:\Users\Adrian\Desktop\Hilos\AMD-PR02\src\Solution2" />
@@ -57,10 +67,36 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Solution1.Main" />
+      <option name="MAIN_CLASS_NAME" value="solution1.Main" />
       <module name="AMD-PR02" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="solution3.Main" />
+      <module name="AMD-PR02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="solution3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="solution2.Main" />
+      <module name="AMD-PR02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="solution2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -80,6 +116,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

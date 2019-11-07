@@ -1,10 +1,11 @@
-package Solution1;
+package solution1;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+@SuppressWarnings("JavaDoc")
 class Stick {
     private final int stickNumber;
     private boolean taken;
@@ -18,6 +19,11 @@ class Stick {
         this.taken =false;
     }
 
+    /**
+     * @param name
+     * If stick isn´t taken,take it.
+     * @throws InterruptedException
+     */
     void take(String name) throws InterruptedException {
         lock.lock();
         while (taken){
@@ -29,6 +35,13 @@ class Stick {
 
     }
 
+    /**
+     * @param name
+     * @param flag
+     * Drop the stick and show a message depend of the stick
+     * @throws InterruptedException
+     */
+    @SuppressWarnings("JavaDoc")
     void drop(String name, Boolean flag) throws InterruptedException {
         lock.lock();
         if(flag){
