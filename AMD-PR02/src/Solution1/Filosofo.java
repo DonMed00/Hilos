@@ -3,10 +3,10 @@ package Solution1;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Filosofo implements Runnable {
-    private String name;
-    private Palillo palillo1;
-    private Palillo palillo2;
+class Filosofo implements Runnable {
+    private final String name;
+    private final Palillo palillo1;
+    private final Palillo palillo2;
     private boolean interrumpted =false;
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
@@ -44,7 +44,7 @@ public class Filosofo implements Runnable {
     }
 
 
-    void cogerTenedor() throws InterruptedException {
+    private void cogerTenedor() throws InterruptedException {
 
         palillo1.coger(name);
         Thread.sleep(3000);
@@ -52,7 +52,7 @@ public class Filosofo implements Runnable {
          Thread.sleep(2000);
     }
 
-    void soltarTenedor() throws InterruptedException {
+    private void soltarTenedor() throws InterruptedException {
         Thread.sleep(3000);
         palillo1.soltar(name, false);
         palillo2.soltar(name, true);

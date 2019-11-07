@@ -2,8 +2,8 @@ package Solution2;
 
 import java.util.concurrent.Semaphore;
 
-public class Camarero {
-    Semaphore semaphore = new Semaphore(1);
+class Camarero {
+    private final Semaphore semaphore = new Semaphore(1);
 
     void comprobarPalillos(Palillo palillo1, Palillo palillo2, String name) throws InterruptedException {
         semaphore.acquire();

@@ -5,10 +5,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Palillo {
-    private int numPalillo;
+class Palillo {
+    private final int numPalillo;
     private boolean pillado;
-    ReentrantLock lock = new ReentrantLock(true);
+    private final ReentrantLock lock = new ReentrantLock(true);
     private final Condition condition = lock.newCondition();
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 

@@ -3,12 +3,12 @@ package Solution2;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Filosofo implements Runnable {
-    private String name;
-    private Palillo palillo1;
-    private Palillo palillo2;
+class Filosofo implements Runnable {
+    private final String name;
+    private final Palillo palillo1;
+    private final Palillo palillo2;
     private boolean interrumpted =false;
-    Camarero camarero;
+    private final Camarero camarero;
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
 
