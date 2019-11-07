@@ -18,6 +18,29 @@ public class Main {
         thread3.start();
         thread4.start();
         thread5.start();
+        startThreads();
 
+        try {
+            Thread.sleep(60000);
+            thread1.interrupt();
+            thread2.interrupt();
+            thread3.interrupt();
+            thread4.interrupt();
+            thread5.interrupt();
+
+
+            thread1.join();
+            thread2.join();
+            thread3.join();
+            thread4.join();
+            thread5.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Dueño del bar: Dejar de comer y pensar ya, que es tarde");
+    }
+
+    private static void startThreads() {
     }
 }

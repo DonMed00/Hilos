@@ -9,6 +9,7 @@ public class Filosofo implements Runnable {
     static int filosofo;
     Palillo palillo1;
     Palillo palillo2;
+    boolean interrumpted =false;
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
 
@@ -21,14 +22,22 @@ public class Filosofo implements Runnable {
 
     @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
-        try {
-            comer();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while (!Thread.currentThread().isInterrupted() && !interrumpted) {
+            try {
+                pensar();
+                comer();
+            } catch (InterruptedException e) {
+                interrumpted = true;
+                System.out.printf("%s . Me he interrumpido\n",name);
+
+            }
         }
     }
-     }
+
+    private void pensar() throws InterruptedException {
+        System.out.printf("%s - %s . Estoy pensando\n",LocalDateTime.now().format(dateTimeFormatter),name);
+        Thread.sleep(5000);
+    }
 
     private void comer() throws InterruptedException {
         cogerTenedor();
@@ -43,31 +52,18 @@ public class Filosofo implements Runnable {
         palillo1.coger(name);
         Thread.sleep(3000);
         palillo2.coger(name);
-       // Thread.sleep(2000);
+         Thread.sleep(2000);
     }
 
     void soltarTenedor() throws InterruptedException {
         Thread.sleep(3000);
-        palillo1.soltar(name,false);
-        palillo2.soltar(name,true);
-        //System.out.printf("%s .Ya he comido\n Suelto los palillos %d y %d\n",name,palillo1.getNumPalillo(),palillo2.getNumPalillo());
+        palillo1.soltar(name, false);
+        palillo2.soltar(name, true);
         Thread.sleep(2000);
 
     }
-
-
     private void aumentarNumFilosofo() {
         filosofo++;
         this.numFilosofo = filosofo;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getNumFilosofo() {
-        return numFilosofo;
-    }
-
-
 }

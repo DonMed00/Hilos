@@ -18,7 +18,6 @@ public class Palillo {
         this.pillado =false;
     }
 
-
     void coger(String name) throws InterruptedException {
         lock.lock();
         while (pillado){
@@ -32,14 +31,12 @@ public class Palillo {
 
     void soltar(String name,Boolean flag) throws InterruptedException {
         lock.lock();
-
-        //Thread.sleep(2000);
         if(flag){
-            System.out.printf("%s - %s .Suelto el palillo %d Ya he comido\n", LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
-
+            System.out.printf("%s - %s . Suelto el palillo %d Ya he comido . Me voy a pensar \n", LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
         }else{
+            System.out.printf("%s - %s . Estoy comiendo. Que rico!! \n",LocalDateTime.now().format(dateTimeFormatter),name);
+            Thread.sleep(1500);
             System.out.printf("%s - %s . Suelto el palillo %d\n",LocalDateTime.now().format(dateTimeFormatter),name,numPalillo);
-
         }
         pillado =false;
         condition.signal();
@@ -47,21 +44,5 @@ public class Palillo {
         lock.unlock();
 
 
-    }
-
-
-
-
-
-
-
-
-
-    public int getNumPalillo() {
-        return numPalillo;
-    }
-
-    public boolean isPillado() {
-        return pillado;
     }
 }
