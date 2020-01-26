@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5a89987f-a3e0-4aa6-b8a2-e9542ab2274d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution2/Stick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution2/Stick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AMD-PR02/Solution2/Waiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AMD-PR02/Solution2/Waiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Philosopher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution1/Philosopher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution1/Stick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution1/Stick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution2/Philosopher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution2/Philosopher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution2/Stick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution2/Stick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution2/Waiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solution2/Waiter.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,9 +30,15 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -54,18 +50,6 @@
       <recent name="C:\Users\Adrian\Desktop\Hilos\AMD-PR02\src\Solution1" />
       <recent name="C:\Users\Adrian\Desktop\Hilos\AMD-PR02\src\Solution2" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -120,6 +104,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -145,5 +141,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="739" y="262" key="FileChooserDialogImpl" timestamp="1579454666171">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="262" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579454666171" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1578585973920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578585973920" />
+    <state x="342" y="141" key="new project wizard" timestamp="1579454681963">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="141" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1579454681963" />
   </component>
 </project>
