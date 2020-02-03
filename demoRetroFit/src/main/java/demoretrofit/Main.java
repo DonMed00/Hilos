@@ -4,31 +4,38 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class Main {
     public static void main(String[] args) {
         new Main();
     }
+
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("https://swapi.co/api/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+
+    Swapi apiService = retrofit.create(Swapi.class);
+
     public Main(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://swapi.co/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+         getPersonWithPlanet(1)
+                 .thenAccept(personPlanet -> System.out.printf("%s - %s\n", personPlanet.getPersonName(), personPlanet.getPlanetName()));
 
-        Swapi apiService = retrofit.create(Swapi.class);
-         apiService.getPerson(1).whenComplete((person, throwable) -> {
-             if ((throwable==null)){
-                 System.out.println(person.getName());
-
-             }
-         }).thenAccept(person -> {
-             apiService.getPlanet(Integer.parseInt(person.getHomeworld().substring(29,30))).whenComplete((planet, throwable) -> {
-                 if ((throwable == null)) {
-                     System.out.println(planet.getName());
-
-                 }
-             }).join();
-
-         });
+        getPersonWithPlanet(1)
+                .thenApply(personPlanet -> personPlanet.getPersonName() + " - " + personPlanet.getPlanetName())
+                .thenAccept(System.out::println);
     }
+
+    private CompletableFuture<PersonPlanet> getPersonWithPlanet(int personId) {
+        return apiService.getPerson(1)
+                .thenCompose(person ->
+                        // Algo que retorna un CompletableFuture
+                        // Obtengo el planeta, y después lo transformo en un PersonaPlaneta
+                    apiService.getPlanetByUrl(person.getHomeworld()).thenApply(planet ->
+                            new PersonPlanet(person.getName(), planet.getName())
+                    )
+        );
+    }
+
 }
