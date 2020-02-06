@@ -16,4 +16,6 @@ public interface Swapi {
 
     @GET
     CompletableFuture<Planet> getPlanetByUrl(@Url String planetUrl);
+    @GET
+    CompletableFuture<Film> getFilmByUrl(@Url String filmUrl);
 }
